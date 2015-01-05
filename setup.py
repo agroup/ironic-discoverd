@@ -8,9 +8,13 @@ with open('requirements.txt', 'r') as fp:
                         for line in fp if line.strip()]
 
 
+with open('ironic_discoverd/__init__.py', 'rb') as fp:
+    exec(fp.read())
+
+
 setup(
     name = "ironic-discoverd",
-    version = "0.2.5",
+    version = __version__,
     description = open('README.rst', 'r').readline().strip(),
     author = "Dmitry Tantsur",
     author_email = "dtantsur@redhat.com",
